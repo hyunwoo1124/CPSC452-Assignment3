@@ -1,5 +1,5 @@
 
-# cpsc452 Assignment 3 Spring 2020
+# Cpsc452 Assignment 3 Spring 2020
 ```sh
 Team member:
     Alex Tran                       quyen137@csu.fullerton.edu
@@ -32,7 +32,7 @@ Not implementated
 
 ## Special Note
 ```
-    Our team ran the program and it worked prefectly
+    Our team ran the program and it worked prefectly.
     And we learned alot about public key cryptography!
 ```
 
