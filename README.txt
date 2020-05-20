@@ -1,6 +1,6 @@
 
-# cpsc452 Assignment 3 Spring 2020
-```sh
+Cpsc452 Assignment 3 Spring 2020
+
 Team member:
     Alex Tran                       quyen137@csu.fullerton.edu
     Raymond Laurente                raymondlaurente@csu.fullerton.edu
@@ -8,10 +8,10 @@ Team member:
     Brandon Lavello                 brandonlavello@csu.fullerton.edu
     Hyun Woo Kim                    hyunwoo777@csu.fullerton.edu
     Josh Robert                     jroberts30@csu.fullerton.edu
-```
 
-## Steps to run: 
-```
+
+Steps to run: 
+
 Programming Language: Python2
 
 To create a signature with a private key
@@ -23,17 +23,12 @@ To verify our signature with a public key
 To verify that the program properly, we can use wrongPubKey to verify
     python skeleton.py wrongPubKey.pem music.sig music.mp3 verify
 
-```
 
-## Extra Credit
-```
-Not implementated
-```
+Extra Credit:
+    Not implementated
 
-## Special Note
-```
+Special Note:
     Our team ran the program and it worked prefectly
     And we learned alot about public key cryptography!
-```
 
 

@@ -70,16 +70,16 @@ def getFileSig(fileName, privKey):
 # @param signature - the signature of the file to verify
 ##########################################################
 def verifyFileSig(fileName, pubKey, signature):
-
+	verifySign = None
 	# TODO:
 	# 1. Read the contents of the input file (fileName)
-	with open(fileName, 'r') as myFille:
+	with open(fileName, 'r') as myFile:
 		readFile = myFile.read()
 	# 2. Compute the SHA-512 hash of the contents
 		hashedData = SHA512.new(readFile).hexdigest()
 	# 3. Use the verifySig function you implemented in
 	# order to verify the file signature
-		verifySign = verifySig(hasedData,signature,pubKey)
+		verifySign = verifySig(hashedData,signature,pubKey)
 	# 4. Return the result of the verification i.e.,
 	# True if matches and False if it does not match
 	return verifySign
@@ -117,7 +117,7 @@ def loadSig(fileName):
 	myTuple = ()
 	with open(fileName, 'r') as myFile:
 		readFile = int(myFile.read())
-		myTuple = (readFile)
+		myTuple = (readFile,)
 	return myTuple
 
 #################################################
@@ -158,7 +158,7 @@ def main():
 
 	# TODO: Load the key using the loadKey() function provided.
 	myKey = loadKey(keyFileName)
-	print ("keyFileName: ", myKey, "\n" ,"sigFileName: ",sigFileName, "\n" ,"inputFileName: ",inputFileName, "\n")
+	
 
 	# We are signing
 	if mode == "sign":
@@ -167,7 +167,7 @@ def main():
 		#       2. Save the signature to the file
 		fileSignature = getFileSig(inputFileName,myKey)
 		saveSig(sigFileName,fileSignature)
-		print ("Signature saved to file ", sigFileName)
+		print "Signature saved to file ", sigFileName
 
 	# We are verifying the signature
 	elif mode == "verify":
@@ -175,10 +175,10 @@ def main():
 		# signature signature in the signature file matches the
 		# signature of the input file
 		sig = loadSig(sigFileName)
-		if(verifyFileSig(inputFileName,myKey,sigFileName)):
-			print ("Signature has been successfully verified")
+		if(verifyFileSig(inputFileName,myKey,sig)):
+			print "Signature has been successfully verified"
 		else:
-			print ("Signature invalid")
+			print "Signature invalid"
 
 	else:
 		print ("Invalid mode ", mode)
